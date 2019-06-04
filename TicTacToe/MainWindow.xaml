@@ -8,18 +8,21 @@
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="MyButtonStyle">
-            <Setter Property="Button.Background">
+            <Setter Property="Template">
                 <Setter.Value>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#141E30" Offset="0"/>
-                        <GradientStop Color="#243B55" Offset="1"/>
-                    </LinearGradientBrush>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Setter Property="Background" Value="Transparent" />
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="FontSize" Value="70pt" />
-            <Setter Property="Foreground" Value="White" />
+            <!--<Setter Property="Margin" Value="10, 0 , 0 ,0" />-->
+            <Setter Property="FontSize" Value="120pt" />
+            <Setter Property="Foreground" Value="Black" />
         </Style>
     </Window.Resources>
     <Grid Margin="20">
